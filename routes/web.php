@@ -39,5 +39,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',App\Http\Livew
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',App\Http\Livewire\Dashboard\Index::class)->name('dashboard');
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 	Route::get('dashboard',App\Http\Livewire\Dashboard\Index::class)->name('dashboard');
-	Route::get('view',App\Http\Livewire\View\Index::class)->name('view');
+	Route::get('view/{id}',App\Http\Livewire\View\Index::class)->name('view');
 });

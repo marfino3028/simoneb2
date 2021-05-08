@@ -109,7 +109,7 @@ class Index extends Component
         $this->sosial = Sosial::where('users_id',$this->userz->id)->get();
         $this->tahsin = Tahsin::where('users_id',$this->userz->id)->get();
         // return view('view');
-        return redirect()->to('/view');
+        return redirect()->to('/view/'.$id);
     }
 
     //FUNGSI INI UNTUK MENGHAPUS DATA
