@@ -1,7 +1,7 @@
 
 <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Data Beasiswa
+        Data Kekhasan Beasiswa
     </h2>
 </x-slot>
 <div class="py-12">
@@ -25,11 +25,11 @@
             
                 <thead>
                     <tr class="bg-gray-100">
-                        <th class="px-4 py-2">Nama</th>
+                        <th class="px-4 py-2">Nama Kekhasan Beasiswa</th>
                         <th class="px-4 py-2">Deskripsi</th>
                         <th class="px-4 py-2">Foto</th>
                         <th class="px-4 py-2">Semester</th>
-                        <th class="px-4 py-2 w-13">Action</th>
+                        <th class="px-4 py-2 w-15">Action</th>
                     </tr>
                 </thead>
                 <tbody>

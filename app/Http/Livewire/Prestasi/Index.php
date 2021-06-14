@@ -75,7 +75,7 @@ class Index extends Component
         //QUERY UNTUK MENYIMPAN / MEMPERBAHARUI DATA MENGGUNAKAN UPDATEORCREATE
         //DIMANA ID MENJADI UNIQUE ID, JIKA IDNYA TERSEDIA, MAKA UPDATE DATANYA
         //JIKA TIDAK, MAKA TAMBAHKAN DATA BARU
-        Prestasi::updateOrCreate(['id' => $this->$prestasi_id], [
+        Prestasi::updateOrCreate(['id' => $this->prestasi_id], [
             'nama' => $this->nama,
             'peringkat' => $this->peringkat,
             'level' => $this->level,
@@ -87,7 +87,7 @@ class Index extends Component
         ]);
 
         //BUAT FLASH SESSION UNTUK MENAMPILKAN ALERT NOTIFIKASI
-        session()->flash('message', $this->$prestasi_id ? $this->nama . ' Diperbaharui': $this->nama . ' Ditambahkan');
+        session()->flash('message', $this->prestasi_id ? $this->nama . ' Diperbaharui': $this->nama . ' Ditambahkan');
         $this->closeModal(); //TUTUP MODAL
         $this->resetFields(); //DAN BERSIHKAN FIELD
     }
@@ -97,7 +97,7 @@ class Index extends Component
     {
         $prestasi = Prestasi::find($id); //BUAT QUERY UTK PENGAMBILAN DATA
         //LALU ASSIGN KE DALAM MASING-MASING PROPERTI DATANYA
-        $this->$prestasi_id = $id;
+        $this->prestasi_id = $id;
         $this->nama = $prestasi->nama;
         $this->peringkat = $prestasi->peringkat;
         $this->level = $prestasi->level;

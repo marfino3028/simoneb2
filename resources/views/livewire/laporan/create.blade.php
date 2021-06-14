@@ -12,19 +12,14 @@
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div class="">
                             <div class="mb-4">
-                                <label for="formipk" class="block text-gray-700 text-sm font-bold mb-2">IPK:</label>
-                                <input type="number" step="0.01" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="formipk" wire:model="ipk">
-                                @error('ipk') <span class="text-red-500">{{ $message }}</span>@enderror
-                            </div>
-                            <div class="mb-4">
-                                <label for="formips" class="block text-gray-700 text-sm font-bold mb-2">IPS:</label>
-                                <input type="number" step="0.01" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="formips" wire:model="ips">
-                                @error('ips') <span class="text-red-500">{{ $message }}</span>@enderror
-                            </div>
-                            <div class="mb-4">
-                                <label for="formtahun" class="block text-gray-700 text-sm font-bold mb-2">Tahun:</label>
-                                <input type="text" placeholder="2021/2022" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="formtahun" wire:model="tahun">
-                                @error('tahun') <span class="text-red-500">{{ $message }}</span>@enderror
+                                <label for="laporan" class="block text-gray-700 text-sm font-bold mb-2">Upload PPT / Word:</label>
+                                <div class="mb-3">
+                                <input type="file" wire:model="laporan" class="">
+                                <div>
+                                    @error('laporan') <span class="text-sm text-red-500 italic">{{ $message }}</span>@enderror
+                                </div>
+                                <div wire:loading wire:target="laporan" class="text-sm text-gray-500 italic">Uploading...</div>
+                                </div>
                             </div>
                             <div class="mb-4">
                                 <label for="semester" class="block text-gray-700 text-sm font-bold mb-2">Semester</label>

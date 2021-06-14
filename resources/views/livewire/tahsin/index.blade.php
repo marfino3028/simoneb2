@@ -30,7 +30,7 @@
                         <th class="px-4 py-2">Nilai</th>
                         <th class="px-4 py-2">Foto</th>
                         <th class="px-4 py-2">Semester</th>
-                        <th class="px-4 py-2 w-20">Action</th>
+                        <th class="px-4 py-2 w-15">Action</th>
                     </tr>
                 </thead>
                 <tbody>

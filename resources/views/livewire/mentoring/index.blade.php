@@ -25,13 +25,13 @@
 
                 <thead>
                     <tr class="bg-gray-100">
-                        <th class="px-4 py-2">Nama</th>
+                        <th class="px-4 py-2">Nama Mentor</th>
                         <th class="px-4 py-2">Jumlah Pertemuan</th>
                         <th class="px-4 py-2">Jumlah Kehadiran</th>
                         <th class="px-4 py-2">Persen</th>
                         <th class="px-4 py-2">Foto</th>
                         <th class="px-4 py-2">Semester</th>
-                        <th class="px-4 py-2 w-20">Action</th>
+                        <th class="px-4 py-2 w-15">Action</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -10,7 +10,7 @@ use Validator;
 class Index extends Component
 {
     use WithFileUploads;
-    public $forums,$tgl ,$nama, $foto, $semester, $users_id, $forum_id;
+    public $forums,$tgl ,$nama, $foto, $semester, $users_id, $forum_id, $penyelenggara;
     public $isModal = 0;
     protected $rules = [
         'nama' => 'required|string',
@@ -56,6 +56,7 @@ class Index extends Component
         $this->forum_id = '';
         $this->nama = '';
         $this->tgl = '';
+        $this->penyelenggara = '';
         $this->foto = '';
         $this->semester = '';
         $this->users_id = '';
@@ -76,6 +77,7 @@ class Index extends Component
             'nama' => $this->nama,
             'tgl' => $this->tgl,
             'foto' => $foto,
+            'penyelenggara' => $penyelenggara,
             'semester_id' => $this->semester,
             'users_id' => Auth::user()->id,
         ]);
@@ -94,6 +96,7 @@ class Index extends Component
         $this->forum_id = $id;
         $this->tgl = $forum->tgl;
         $this->nama = $forum->nama;
+        $this->penyelenggara = $forum->penyelenggara;
         $this->foto = $forum->foto;
         $this->semester = $forum->semester_id;
 

@@ -41,10 +41,10 @@ class Karya extends Model
     ];
 
     public function users(){
-        return $this->hasMany(\App\User::class, 'users_id');
+        return $this->hasMany(\App\Models\User::class, 'users_id');
     }
     public function semester(){
-        return $this->hasMany(\App\Semester::class, 'semester_id');
+        return $this->hasMany(\App\Models\Semester::class, 'semester_id');
     }
     
 

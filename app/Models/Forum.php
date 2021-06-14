@@ -15,7 +15,7 @@ class Forum extends Model
      * @var array
      */
     protected $fillable = [
-        'tgl', 'foto', 'nama','users_id','semester_id'
+        'tgl', 'foto', 'nama','users_id','semester_id','penyelenggara'
     ];
 
     /**
@@ -34,15 +34,16 @@ class Forum extends Model
         'tgl' => 'date',
         'foto' => 'string',
         'nama' => 'string',
+        'penyelenggara' => 'string',
         'semester_id' => 'integer',
         'users_id' => 'integer'
     ];
 
     public function users(){
-        return $this->hasMany(\App\User::class, 'users_id');
+        return $this->hasMany(\App\Models\User::class, 'users_id');
     }
 
     public function semester(){
-        return $this->hasMany(\App\Semester::class, 'semester_id');
+        return $this->hasMany(\App\Models\Semester::class, 'semester_id');
     }
 }

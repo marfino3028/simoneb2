@@ -17,7 +17,7 @@ use App\Models\Sosial;
 use App\Models\Tahsin;
 use Livewire\WithFileUploads;
 use Validator;
-class Index extends Component
+class Indexss extends Component
 {
     use WithFileUploads;
     public $users,$messages,$semester,$users_id,$id,$beasiswa,$forum,$karya,$mentoring,$nilai,$org_mhs,$prestasi,$sosial,$tahsin;

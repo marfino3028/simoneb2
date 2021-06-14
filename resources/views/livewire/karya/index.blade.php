@@ -25,12 +25,12 @@
 
                 <thead>
                     <tr class="bg-gray-100">
-                        <th class="px-4 py-2">Judul</th>
+                        <th class="px-4 py-2">Judul Karya</th>
                         <th class="px-4 py-2">Tanggal</th>
                         <th class="px-4 py-2">Nama Media</th>
                         <th class="px-4 py-2">Link</th>
                         <th class="px-4 py-2">Semester</th>
-                        <th class="px-4 py-2 w-20">Action</th>
+                        <th class="px-4 py-2 w-15">Action</th>
                     </tr>
                 </thead>
                 <tbody>

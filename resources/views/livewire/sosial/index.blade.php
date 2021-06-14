@@ -25,7 +25,7 @@
 
                 <thead>
                     <tr class="bg-gray-100">
-                        <th class="px-4 py-2">Nama</th>
+                        <th class="px-4 py-2">Nama Kegiatan</th>
                         <th class="px-4 py-2">Tanggal</th>
                         <th class="px-4 py-2">Penyelenggara Sosial</th>
                         <th class="px-4 py-2">Foto</th>

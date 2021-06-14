@@ -119,12 +119,61 @@ class Index extends Component
             $user->delete(); 
             session()->flash('user', $user->name . ' Dihapus'); 
         }
-    public function deleteMessages($id)    
+    public function deleteBeasiswa($id)    
+        {
+            $beasiswa = Beasiswa::find($id); 
+            $beasiswa->delete(); 
+            session()->flash('messages', $beasiswa->nama . ' Dihapus'); 
+        }
+    public function deleteForum($id)    
+        {
+            $forum = Forum::find($id); 
+            $forum->delete(); 
+            session()->flash('messages', $forum->nama . ' Dihapus'); 
+        }
+    public function deleteKarya($id)    
+        {
+            $karya = Karya::find($id); 
+            $karya->delete(); 
+            session()->flash('messages', $karya->nama . ' Dihapus'); 
+        }
+    public function deleteMentoring($id)    
+        {
+            $mentoring = Mentoring::find($id); 
+            $mentoring->delete(); 
+            session()->flash('messages', $mentoring->nama . ' Dihapus'); 
+        }
+    public function deleteNilai($id)    
+        {
+            $nilai = Nilai::find($id); 
+            $nilai->delete(); 
+            session()->flash('messages', $nilai->tahun . ' Dihapus'); 
+        }
+       
+    public function deletePrestasi($id)    
         {
             $messages = Message::find($id); 
             $messages->delete(); 
             session()->flash('messages', $messages->messages . ' Dihapus'); 
         }
+    public function deleteOrgmhs($id)    
+        {
+            $messages = Message::find($id); 
+            $messages->delete(); 
+            session()->flash('messages', $messages->messages . ' Dihapus'); 
+        }
+    public function deleteSosial($id)    
+        {
+            $messages = Message::find($id); 
+            $messages->delete(); 
+            session()->flash('messages', $messages->messages . ' Dihapus'); 
+        }
+    public function deleteTahsin($id)    
+            {
+                $messages = Message::find($id); 
+                $messages->delete(); 
+                session()->flash('messages', $messages->messages . ' Dihapus'); 
+            }
         public function edit($id)
         {
             $messages = Message::find($id); //BUAT QUERY UTK PENGAMBILAN DATA

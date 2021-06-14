@@ -28,6 +28,7 @@ Route::get('prestasi', App\Http\Livewire\Prestasi\Index::class)->name('prestasi'
 Route::get('sosial', App\Http\Livewire\Sosial\Index::class)->name('sosial')->middleware('auth');
 Route::get('tahsin', App\Http\Livewire\Tahsin\Index::class)->name('tahsin')->middleware('auth');
 Route::get('laporan', App\Http\Livewire\Laporan\Index::class)->name('laporan')->middleware('auth');
+Route::get('laporanBeasiswa', App\Http\Livewire\LaporanBeasiswa\Index::class)->name('laporanBeasiswa')->middleware('auth');
 
 /*
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',App\Http\Livewire\Dashboard\Index::class, function () {

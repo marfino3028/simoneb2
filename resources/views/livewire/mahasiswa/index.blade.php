@@ -13,7 +13,7 @@
 			<thead>
 				<tr class="border">
 					<th class="px-4 py-2">NIM</th>
-					<th class="px-4 py-2">Nama</th>
+					<th class="px-4 py-2">Nama Beasiswa</th>
 					<th class="px-4 py-2">Angkatan</th>
 					<th class="px-4 py-2">Beasiswa</th>
 				</tr>

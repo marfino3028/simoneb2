@@ -13,16 +13,7 @@
                     <div class="">
                          <div class="mb-4">
                             <label for="level" class="block text-gray-700 text-sm font-bold mb-2">Level</label>
-                            <select class="form-control" wire:model="level" id="forLevel" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                <option value="">Level</option>
-                                <option value="tahsin">Tahsin</option>
-                                <option value="1">Level 1</option>
-                                <option value="2">Level 2</option>
-                                <option value="3">Level 3</option>
-                                <option value="4">Level 4</option>
-                                <option value="5">Level 5</option>
-                                <option value="6">Level 6</option>
-                            </select>
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="formLevel" wire:model="level">
                             @error('level') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="mb-4">

@@ -28,8 +28,9 @@
                         <th class="px-4 py-2">Nama</th>
                         <th class="px-4 py-2">Tanggal</th>
                         <th class="px-4 py-2">Foto</th>
+                        <th class="px-4 py-2">Penyelenggara</th>
                         <th class="px-4 py-2">Semester</th>
-                        <th class="px-4 py-2 w-20">Action</th>
+                        <th class="px-4 py-2 w-15">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +39,7 @@
                             <td class="border px-4 py-2">{{ $row->nama }}</td>
                             <td class="border px-4 py-2">{{ $row->tgl }}</td>
                             <td class="border px-4 py-2"><img  src="{{ asset('storage/forum/'.$row->foto) }}" id="myImg" alt="{{ $row->nama }}">
+                            <td class="border px-4 py-2">{{ $row->penyelenggara}}</td>
                             <td class="border px-4 py-2">{{ $row->semester}}</td>
                             <td class="border px-4 py-2">
                                 <div class="vx-row mb-6">

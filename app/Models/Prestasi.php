@@ -14,7 +14,7 @@ class Prestasi extends Model
      *
      * @var array
      */
-    protected $primarykey = 'id';
+    protected $primarykey = 'prestasi_id';
     protected $table = 'prestasi';
     protected $fillable = [
         'peringkat', 'foto', 'nama','level','penyelenggara_prestasi','users_id','semester_id'
@@ -43,10 +43,10 @@ class Prestasi extends Model
     ];
 
     public function users(){
-        return $this->hasMany(\App\User::class, 'users_id');
+        return $this->hasMany(\App\Models\User::class, 'users_id');
     }
     public function semester(){
-        return $this->hasMany(\App\Semester::class, 'semester_id');
+        return $this->hasMany(\App\Models\Semester::class, 'semester_id');
     }
 
 }

@@ -40,7 +40,7 @@ class Semester extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        'semester_id' => 'integer',
         'semester' => 'string'
     ];
 

@@ -5,12 +5,12 @@ namespace App\Http\Livewire\Laporan;
 use Livewire\Component;
 
 use App\Models\{ Nilai, Karya, Sosial, Prestasi, Org_mhs as Org, Forum, Mentoring, Tahsin, Beasiswa };
-
 use PhpOffice\PhpWord\TemplateProcessor;
 use PhpOffice\PhpWord\IOFactory;
 
 class Index extends Component
 {
+	
     public function render()
     {
 		$ui 		= new TemplateProcessor('exam.docx');
