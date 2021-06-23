@@ -17,10 +17,15 @@ use App\Models\Sosial;
 use App\Models\Tahsin;
 use Livewire\WithFileUploads;
 use Validator;
+use Illuminate\Support\Str;
+use Mediconesystems\LivewireDatatables\Column;
+use Mediconesystems\LivewireDatatables\NumberColumn;
+use Mediconesystems\LivewireDatatables\DateColumn;
+use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 class Indexss extends Component
 {
     use WithFileUploads;
-    public $users,$messages,$semester,$users_id,$id,$beasiswa,$forum,$karya,$mentoring,$nilai,$org_mhs,$prestasi,$sosial,$tahsin;
+    public $users,$messages,$semester,$users_id,$id,$beasiswa,$forum,$karya,$mentoring,$nilai,$org_mhs,$prestasi,$sosial,$tahsin,$donatur,$keterangan;
     public $isModal = 0;
     protected $rules = [
         'messages' => 'required|string',
@@ -127,6 +132,14 @@ class Indexss extends Component
             $this->semester = $forum->semester_id;
     
             $this->openModal(); //LALU BUKA MODAL
+        }
+        public function update($id)
+        {
+            $donatur = User::find($id);
+            $donatur->update([
+            'donatur' => $this->donatur,
+            'keterangan' => $this->keterangan
+        ]);
         }
 
 }

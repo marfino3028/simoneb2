@@ -12,7 +12,7 @@ class Index extends Component
 {
     use WithFileUploads;
 
-    public $beasiswas,$nama,$deskripsi, $foto, $semester, $users_id, $beasiswa_id;
+    public $beasiswas,$nama,$deskripsi, $foto, $semester, $users_id, $beasiswa_id, $user;
     public $isModal = 0;
 
     protected $rules = [
@@ -28,12 +28,13 @@ class Index extends Component
         $this->beasiswas = Beasiswa::join('semester', 'beasiswa.semester_id', '=', 'semester.id')
         ->join('users', 'beasiswa.users_id', '=', 'users.id')
         ->select('beasiswa.*', 'semester.nama AS semester', 'users.id AS users_id')->where('users_id', $this->user->id)->get(); //MEMBUAT QUERY UNTUK MENGAMBIL DATA
-    
+        
         return view('livewire.beasiswa.index');
         
     }
     public function create()
     {
+        $this->user = Auth::user();
         $this->resetFields();
         $this->openModal();
     }

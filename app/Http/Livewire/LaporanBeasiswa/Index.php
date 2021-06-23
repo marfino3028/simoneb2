@@ -10,10 +10,10 @@ use Validator;
 class Index extends Component
 {
     use WithFileUploads;
-    public $laporans,$laporan, $semester,$users_id, $id;
+    public $laporans,$laporan, $semester,$users_id;
     public $isModal = 0;
     protected $rules = [
-        'laporan' => 'required|mimes:ppt, pptx, xlx, xlsx,,docx|max:10048',
+        // 'laporan' => 'required|mimes:ppt, pptx, xlx, xlsx,,docx|max:10048',
         'semester' => 'required'
     ];
     public function render()
@@ -58,13 +58,13 @@ class Index extends Component
     {
         //MEMBUAT VALIDASI
         $this->validate();
-        $laporan = md5($this->laporan . microtime()).'.'.$this->laporan->extension();
+        $laporan = $this->laporan->getClientOriginalName();
         $this->laporan->storeAs('public/laporan', $laporan);
 
         //QUERY UNTUK MENYIMPAN / MEMPERBAHARUI DATA MENGGUNAKAN UPDATEORCREATE
         //DIMANA ID MENJADI UNIQUE ID, JIKA IDNYA TERSEDIA, MAKA UPDATE DATANYA
         //JIKA TIDAK, MAKA TAMBAHKAN DATA BARU
-        Forum::updateOrCreate(['id' => $this->id], [
+        Laporan::updateOrCreate(['id' => $this->id], [
             'laporan' => $laporan,
             'semester_id' => $this->semester,
             'users_id' => Auth::user()->id,
@@ -79,7 +79,7 @@ class Index extends Component
     //FUNGSI INI UNTUK MENGAMBIL DATA DARI DATABASE BERDASARKAN ID MEMBER
     public function edit($id)
     {
-        $forum = Forum::find($id); //BUAT QUERY UTK PENGAMBILAN DATA
+        $forum = Laporan::find($id); //BUAT QUERY UTK PENGAMBILAN DATA
         //LALU ASSIGN KE DALAM MASING-MASING PROPERTI DATANYA
         $this->id = $id;
         $this->laporan = $forum->laporan;

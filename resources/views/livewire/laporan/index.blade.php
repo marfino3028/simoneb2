@@ -18,23 +18,24 @@
             @endif
             <button wire:click="create()" class="bg-green-700 hover:bg-white-700:text-black text-white  font-bold py-2 px-5  rounded my-3">Tambah Nilai Semester</button>
             @if($isModal)
-                @include('livewire.semester.create')
+                @include('livewire.laporan.create')
             @endif
 
-            <table class="table-fixed w-full">
+            <table class="table-fixed w-full" style="table-layout: fixed;word-break: break-all;">
             
                 <thead>
                     <tr class="bg-gray-100">
-                        <th class="px-4 py-2">File PPT / Word</th>
-                        <th class="px-4 py-2">Semester</th>
-                        <th class="px-4 py-2 w-20">Action</th>
+                        <th class="px-4 py-2 ">File PPT / Word</th>
+                        <th class="px-4 py-2 w-15">Semester</th>
+                        <th class="px-4 py-2 w-7">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($nilais as $row)
+                    @forelse($laporans as $row)
+                    {{-- @php dd($row) @endphp --}}
                         <tr>
-                            <td class="border px-4 py-2">
-                                <a href="https://simoneb.sebi.ac.id/storage/app/laporan/{{ $row->file }}">{{ $row->file }}</a>
+                            <td class="border px-4 py-2 ">
+                                <a href="https://simoneb.sebi.ac.id/storage/app/public/laporan/{{ $row->laporan }}">{{ $row->laporan }}</a>
                             </td>
                             <td class="border px-4 py-2">{{ $row->semester}}</td>
                             <td class="border px-4 py-2">

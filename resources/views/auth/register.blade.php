@@ -1,3 +1,4 @@
+
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
@@ -32,18 +33,40 @@
                 <x-jet-label for="prodi" value="{{ __('Program Studi') }}" />
                 <x-jet-input id="prodi" class="block mt-1 w-full" type="text" name="prodi" :value="old('prodi')" required autofocus autocomplete="prodi" placeholder="Hukum Ekonomi Syariah" />
             </div>
+            <br>
             <div>
                 <x-jet-label for="alamat" value="{{ __('Alamat') }}" />
                 <x-jet-input id="alamat" class="block mt-1 w-full" type="textarea" name="alamat " :value="old('alamat')" required autofocus autocomplete="alamat" placeholder="Jl. Raya Bojongsari"/>
             </div>
-
+            <br>
+            <div>
+                @php
+                $provinsi = DB::table('provinsi')->get();
+                @endphp
+                <label for="provinsi" class="block text-gray-700 text-sm font-bold mb-2">Provinsi</label>
+                <select class="form-control w-full" wire:model="provinsi" id="forProvinsi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    @foreach($provinsi AS $row)
+                    <option value="{{ $row->id_prov }}">{{ $row->nama }}</option>
+                    @endforeach
+                </select>
+                @error('provinsi') <span class="text-red-500">{{ $message }}</span>@enderror
+            </div>
+            <br>
             <div>
                 <x-jet-label for="hp" value="{{ __('No. HP') }}" />
                 <x-jet-input id="hp" class="block mt-1 w-full" type="number" name="hp" :value="old('hp')" required autofocus autocomplete="hp" placeholder="0896xxxxxx" />
             </div>
+            <br>
             <div>
-                <x-jet-label for="beasiswa" value="{{ __('Beasiswa') }}" />
-                <x-jet-input id="beasiswa" class="block mt-1 w-full" type="text" name="beasiswa" :value="old('beasiswa')" required autofocus autocomplete="name" placeholder="Beasiswa 100%" />
+                <label for="beasiswa" class="block text-gray-700 text-sm font-bold mb-2">Beasiswa</label>
+                <select class="form-control w-full" wire:model="beasiswa" id="forBeasiswa" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="">Beasiswa</option>
+                    <option value="ekspad">SDM EKSPAD</option>
+                    <option value="enterpreneur">ENTERPRENEUR</option>
+                    <option value="hafidz">HAFIDZ</option>
+                    <option value="hes">HUKUM EKONOMI SYARIAH</option>
+                </select>
+                @error('beasiswa') <span class="text-red-500">{{ $message }}</span>@enderror
             </div>
 
             <div class="mt-4">

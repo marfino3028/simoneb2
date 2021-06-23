@@ -13,6 +13,7 @@ class Register extends Component
         'alamat'                 => '',
         'hp'                  => '',
         'beasiswa'                 => '',
+        'provinsi'                 => '',
         'role'                 => 'mahasiswa',
         'password'              => '',
         'password_confirmation' => '',
@@ -30,6 +31,7 @@ class Register extends Component
             'form.alamat'                 => 'required',
             'form.hp'                  => 'required|max:13',
             'form.beasiswa'                 => 'required',
+            'form.provinsi'                 => 'required',
             'form.password' => 'required|confirmed',
         ]);
         $this->nilai->create($this->form);
@@ -37,7 +39,7 @@ class Register extends Component
     }
 
     public function render()
-    {
+    {                
         return view('auth.register');
 
     }

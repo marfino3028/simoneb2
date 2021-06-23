@@ -38,7 +38,7 @@
                             <td class="border px-4 py-2">{{ $row->nama }}</td>
                             <td class="border px-4 py-2">{{ $row->deskripsi }}</td>
                             
-                            <td class="border px-4 py-2"><img  src="{{ asset('storage/beasiswa/'.$row->foto) }}" id="myImg" alt="{{ $row->nama }}">
+                            <td class="border px-4 py-2"><img  src="{{ asset('beasiswa/'.$row->foto) }}" id="myImg" alt="{{ $row->nama }}">
                             
                             </td>
                             <td class="border px-4 py-2">{{ $row->semester}}</td>

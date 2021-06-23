@@ -1,7 +1,7 @@
 
 <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Data Mahasiswa {{$user->name}}
+        Data Mahasiswa {{$user->name}}        
     </h2>
 </x-slot>
 <div class="py-12">
@@ -32,10 +32,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($messages as $row)
+                    @forelse($messagesz as $row)
                         <tr>
                             <td class="border px-4 py-2">{{ $row->messages }}</td>
-                            <td class="border px-4 py-2">{{ $row->semester}}</td>
+                            <td class="border px-4 py-2">{{ $row->semester_id}}</td>
                             <td class="border px-4 py-2">
                                 <div class="vx-row mb-6">
                                 <div class="vx-col sm:w-1/2 w-full">
@@ -81,6 +81,7 @@
                             <td class="border px-4 py-2"><img  src="{{ asset('storage/beasiswa/'.$row->foto) }}" id="myImg" alt="{{ $row->nama }}">
                             
                             </td>
+                            
                             <td class="border px-4 py-2">{{ $row->semester_id}}</td>
                         </tr>
                     @empty
@@ -115,15 +116,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{-- @php dd($forums); @endphp --}}
                     @forelse($forums as $row)
                         <tr>
                             <td class="border px-4 py-2">{{ $row->nama }}</td>
                             <td class="border px-4 py-2">{{ $row->tgl }}</td>
                             <td class="border px-4 py-2"><img  src="{{ asset('storage/forum/'.$row->foto) }}" id="myImg" alt="{{ $row->nama }}">
                                 <td class="border px-4 py-2">{{ $row->penyelenggara }}</td>
-                            @foreach ($row->semester as $key => $value)
-                            <td class="border px-4 py-2">{{ $value->nama}}</td>
-                            @endforeach
+                            {{-- @foreach ($row->semester as $key => $value) --}}
+                            <td class="border px-4 py-2">{{ $row->semester_id}}</td>
+                            {{-- @endforeach --}}
                             <td class="border px-4 py-2">
                                 <div class="vx-row mb-6">
                                 <div class="vx-col sm:w-1/2 w-full">
@@ -166,9 +168,9 @@
                             <td class="border px-4 py-2">{{ $row->tgl }}</td>
                             <td class="border px-4 py-2">{{ $row->media }}</td>
                             <td class="border px-4 py-2"><a href="{{ $row->link }}" target=_blank>{{ $row->link }}</td>
-                            @foreach ($row->semester as $key => $value)
-                            <td class="border px-4 py-2">{{ $value->nama}}</td>
-                            @endforeach
+                            {{-- @foreach ($row->semester as $key => $value) --}}
+                            <td class="border px-4 py-2">{{ $row->semester_id}}</td>
+                            {{-- @endforeach --}}
                             <td class="border px-4 py-2">
                                 <div class="vx-row mb-6">
                                 <div class="vx-col sm:w-1/2 w-full">
@@ -213,9 +215,9 @@
                             <td class="border px-4 py-2">{{ $row->jml_kehadiran }}</td>
                             <td class="border px-4 py-2">{{ $row->persen }}</td>
                             <td class="border px-4 py-2"><img  src="{{ asset('storage/mentoring/'.$row->foto) }}" id="myImg" alt="{{ $row->nama }}"></td>
-                            @foreach ($row->semester as $key => $value)
-                            <td class="border px-4 py-2">{{ $value->nama}}</td>
-                            @endforeach
+                            {{-- @foreach ($row->semester as $key => $value) --}}
+                            <td class="border px-4 py-2">{{ $row->semester_id}}</td>
+                            {{-- @endforeach --}}
                             <td class="border px-4 py-2">
                                 <div class="vx-row mb-6">
                                 <div class="vx-col sm:w-1/2 w-full">
@@ -258,9 +260,9 @@
                             <td class="border px-4 py-2">{{ $row->jabatan }}</td>
                             <td class="border px-4 py-2">{{ $row->masa_jabatan }}</td>
                             <td class="border px-4 py-2"><img  src="{{ asset('storage/org_mhs/'.$row->foto) }}" id="myImg" alt="{{ $row->nama }}"></td>
-                            @foreach ($row->semester as $key => $value)
-                            <td class="border px-4 py-2">{{ $value->nama}}</td>
-                            @endforeach
+                            {{-- @foreach ($row->semester as $key => $value) --}}
+                            <td class="border px-4 py-2">{{ $row->semester_id}}</td>
+                            {{-- @endforeach --}}
                             <td class="border px-4 py-2">
                                 <div class="vx-row mb-6">
                                 <div class="vx-col sm:w-1/2 w-full">
@@ -305,9 +307,9 @@
                             <td class="border px-4 py-2">{{ $row->level }}</td>
                             <td class="border px-4 py-2">{{ $row->penyelenggara_prestasi }}</td>
                             <td class="border px-4 py-2"><img  src="{{ asset('storage/prestasi/'.$row->foto) }}" id="myImg" alt="{{ $row->nama }}"></td>
-                            @foreach ($row->semester as $key => $value)
-                            <td class="border px-4 py-2">{{ $row->nama}}</td>
-                            @endforeach
+                            {{-- @foreach ($row->semester as $key => $value) --}}
+                            <td class="border px-4 py-2">{{ $row->semester_id}}</td>
+                            {{-- @endforeach --}}
                             <td class="border px-4 py-2">
                                 <div class="vx-row mb-6">
                                 <div class="vx-col sm:w-1/2 w-full">
@@ -350,9 +352,9 @@
                             <td class="border px-4 py-2">{{ $row->tgl }}</td>
                             <td class="border px-4 py-2">{{ $row->penyelenggara_sosial }}</td>
                             <td class="border px-4 py-2"><img  src="{{ asset('storage/sosial/'.$row->foto) }}" id="myImg" alt="{{ $row->nama }}"></td>
-                            @foreach ($row->semester as $key => $value)
-                            <td class="border px-4 py-2">{{ $value->nama}}</td>
-                            @endforeach
+                            {{-- @foreach ($row->semester as $key => $value) --}}
+                            <td class="border px-4 py-2">{{ $row->semester_id}}</td>
+                            {{-- @endforeach --}}
                             <td class="border px-4 py-2">
                                 <div class="vx-row mb-6">
                                 <div class="vx-col sm:w-1/2 w-full">
@@ -395,9 +397,9 @@
                             <td class="border px-4 py-2">{{ $row->no_sk }}</td>
                             <td class="border px-4 py-2">{{ $row->nilai }}</td>
                             <td class="border px-4 py-2"><img  src="{{ asset('storage/tahsin/'.$row->foto) }}" id="myImg" alt="{{ $row->no_sk }}"></td>
-                            @foreach ($row->semester as $key => $value)
-                            <td class="border px-4 py-2">{{ $value->nama}}</td>
-                            @endforeach
+                            {{-- @foreach ($row->semester as $key => $value) --}}
+                            <td class="border px-4 py-2">{{ $row->semester_id}}</td>
+                            {{-- @endforeach --}}
                             <td class="border px-4 py-2">
                                 <div class="vx-row mb-6">
                                 <div class="vx-col sm:w-1/2 w-full">
@@ -416,6 +418,45 @@
                 </tbody>
             </table>
             {{-- tahsin --}}
+            <br><br>
+            {{-- Laporan Perkembangan --}}
+            <h3 class="font-semibold text-xl text-gray-800 leading-tight">
+                Laporan Perkembangan PM Beasiswa
+            </h3><br>
+            <table class="table-fixed w-full" style="table-layout: fixed;word-break: break-all;">
+            
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="px-4 py-2 ">File PPT / Word</th>
+                        <th class="px-4 py-2 w-15">Semester</th>
+                        <th class="px-4 py-2 w-7">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse($laporans as $row)                    
+                        <tr>
+                            <td class="border px-4 py-2 ">
+                                <a href="https://simoneb.sebi.ac.id/storage/app/public/laporan/{{ $row->laporan }}">{{ $row->laporan }}</a>
+                            </td>
+                            <td class="border px-4 py-2">{{ $row->semester_id}}</td>
+                            <td class="border px-4 py-2">
+                                <div class="vx-row mb-6">
+                                <div class="vx-col sm:w-1/2 w-full">
+                                <button wire:click="edit({{ $row->id }})" class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">Edit</button>
+                                </div>
+                                <div class="vx-col sm:w-1/2 w-full">
+                                <button wire:click="delete({{ $row->id }})" class="mt-6 bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded">Hapus</button>
+                                </div>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td class="border px-4 py-2 text-center" colspan="5">Tidak ada data</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+
         </div>
     </div>
 </div>
